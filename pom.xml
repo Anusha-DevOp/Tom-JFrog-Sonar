@@ -33,6 +33,7 @@
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
+		
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
@@ -61,7 +62,46 @@
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
         </plugin>
-      </plugins>
-    </pluginManagement>
+
+	<plugin>
+		<groupId>org.codehaus.cargo</groupId>
+    		<artifactId>cargo-maven2-plugin</artifactId>
+    		<version>1.6.7</version>
+
+
+		<container>
+			<containerId>tomcat9x</containerId>
+			<type>remote</type>
+		</container>
+			<configuration>          
+				<type>runtime</type>
+				<properties>
+					<cargo.remote.username>tomcatAdmin</cargo.remote.username>
+					<cargo.remote.password>tom30</cargo.remote.password>
+					<cargo.tomcat.manager.url>http://localhost:8082/manager</cargo.tomcat.manager.url>
+				</properties>
+			</configuration>
+			<deployer>
+	                        <deployables>
+	                            <deployable>
+	                                 <groupId>mv.tom.jfrog</groupId>
+    					 <artifactId>mv-tom-jfrog-demo</artifactId>
+     					 <type>war</type>
+	                            </deployable>
+	                        </deployables>
+	               </deployer>
+	</plugin>
+	 </plugins>
+   	 </pluginManagement>
+
+	
+	<dependencies>
+       			 <dependency>
+            			<groupId>mv.tom.jfrog</groupId>
+           		        <artifactId>mv-tom-jfrog-demo</artifactId>
+                                <type>war</type>
+                                <version>${target.version}</version>
+                         </dependency>
+        </dependencies>		
   </build>
 </project>
