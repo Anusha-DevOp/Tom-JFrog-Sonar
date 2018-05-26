@@ -50,19 +50,6 @@
     			</snapshotRepository>
 	</distributionManagement>
 
-	<distributionManagement>
-    		<repository>
-        	<id>central</id>
-        	<name>Anusha-releases</name>
-        	<url>http://localhost:8081/artifactory/Jenkins-integration</url>
-    		</repository>
-   			 <snapshotRepository>
-        		<id>snapshots</id>
-        		<name>Anusha-snapshots</name>
-        		<url>http://localhost:8081/artifactory/Jenkins-integration</url>
-    			</snapshotRepository>
-	</distributionManagement>
-
    <build>
     <finalName>mv-tom-jfrog-demo</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
