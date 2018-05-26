@@ -63,33 +63,38 @@
           <version>2.8.2</version>
         </plugin>
 
+
 	<plugin>
 		<groupId>org.codehaus.cargo</groupId>
-    		<artifactId>cargo-maven2-plugin</artifactId>
-    		<version>1.6.7</version>
-
-
-		<container>
-			<containerId>tomcat9x</containerId>
-			<type>remote</type>
-		</container>
-			<configuration>          
-				<type>runtime</type>
-				<properties>
-					<cargo.remote.username>tomcatAdmin</cargo.remote.username>
-					<cargo.remote.password>tom30</cargo.remote.password>
-					<cargo.tomcat.manager.url>http://localhost:8082/manager</cargo.tomcat.manager.url>
-				</properties>
-			</configuration>
-			<deployer>
-	                        <deployables>
-	                            <deployable>
-	                                 <groupId>mv.tom.jfrog</groupId>
-    					 <artifactId>mv-tom-jfrog-demo</artifactId>
-     					 <type>war</type>
-	                            </deployable>
-	                        </deployables>
-	               </deployer>
+            	<artifactId>cargo-maven2-plugin</artifactId>
+           		 
+		<configuration>
+                	 <wait>true</wait>
+                <container>
+                    <containerId>mytomcat</containerId>
+                    <type>installed</type>
+                    <home>${catalina.home}</home>
+                </container>
+                <configuration>
+                    <type>existing</type> 
+                    <home>${catalina.home}</home>
+                <properties>
+                        <cargo.tomcat.manager.url>https://http://localhost:8082/manager</cargo.tomcat.manager.url>
+                        <cargo.remote.username>tomcatAdmin</cargo.remote.username>
+                        <cargo.remote.password>tom30</cargo.remote.password>
+                    </properties>
+                </configuration>
+                <deployer>
+                    <type>installed</type>
+                    <deployables>
+                        <deployable>
+                            <groupId>mv.tom.jfrog</groupId>
+                            <artifactId>mv-tom-jfrog-demo</artifactId>
+                            <type>war</type>
+                        </deployable>
+                    </deployables>
+                </deployer>
+            </configuration>
 	</plugin>
 	 </plugins>
    	 </pluginManagement>
