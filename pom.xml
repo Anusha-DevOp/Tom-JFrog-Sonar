@@ -96,7 +96,14 @@
                     <containerId>TomcatServer</containerId>
                     <type>installed</type>
                     <home>${catalina.home}</home>
+		
+		<dependency>
+            	<groupId>mv.tom.jfrog</groupId>
+                <artifactId>mv-tom-jfrog-demo</artifactId>
+                <classpath>shared</classpath>
+  	        </dependency>
                 </container>
+
                 <configuration>
                     <type>existing</type> 
                     <home>${catalina.home}</home>
