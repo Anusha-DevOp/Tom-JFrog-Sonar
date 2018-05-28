@@ -88,7 +88,7 @@
 	
 	<plugin>
 		<groupId>org.codehaus.cargo</groupId>
-            	<artifactId>cargo-maven3-plugin</artifactId>
+            	<artifactId>cargo-maven2-plugin</artifactId>
 		<version>1.6.7</version>
            		 
 		<configuration>
