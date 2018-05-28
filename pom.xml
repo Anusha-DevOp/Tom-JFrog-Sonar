@@ -92,12 +92,13 @@
 		<version>1.6.7</version>
            		 
 		<configuration>
-                	 <wait>true</wait>
                 <container>
                     <containerId>TomcatServer</containerId>
+		    <home>${CATALINA_HOME}</home>
+		</container>
                 <configuration>
-                    <type>existing</type> 
-                    <home>${catalina_home}</home>
+                    <type>exisiting</type> 
+                    <home>${CATALINA_HOME}</home>
                  </configuration>
             </configuration>
 	</plugin>
