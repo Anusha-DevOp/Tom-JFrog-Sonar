@@ -41,12 +41,12 @@
    		 <repository>
         	<id>central</id>
        	 	<name>Anusha-releases</name>
-        	<url>http://localhost:8081/artifactory/Jenkins-snapshot</url>
+        	<url>http://localhost:8081/artifactory/libs-release-local</url>
     		</repository>
     			<snapshotRepository>
         		<id>snapshots</id>
         		<name>Anusha-snapshots</name>
-        		<url>http://localhost:8081/artifactory/Jenkins-snapshot</url>
+        		<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
     			</snapshotRepository>
 	</distributionManagement>
 
