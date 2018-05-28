@@ -80,16 +80,17 @@
 
 	<plugin>
 		<groupId>org.codehaus.cargo</groupId>
-            	<artifactId>cargo-maven3-plugin</artifactId>
+            	<artifactId>cargo-maven2-plugin</artifactId>
            		 
 		<configuration>
                 <container>
                     <containerId>TomcatServer</containerId>
+		    <type>installed</type>
                     <home>${CATALINA_HOME}</home>
                 </container>
 
                 <configuration>
-                    <type>installed</type> 
+                    <type>existing</type> 
                     <home>${CATALINA_HOME}</home>
                 </configuration>
             </configuration>
