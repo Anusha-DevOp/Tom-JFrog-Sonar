@@ -15,9 +15,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    <target.version>${project.version}</target.version>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -27,27 +26,21 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-    <dependency>
-            	<groupId>mv.tom.jfrog</groupId>
-                <artifactId>mv-tom-jfrog-demo</artifactId>
-                <type>war</type>
-                <version>${target.version}</version>
-    </dependency>
   </dependencies>
 
 
 	<distributionManagement>
-   		 <repository>
-        	<id>central</id>
-       	 	<name>Anusha-releases</name>
-        	<url>http://localhost:8081/artifactory/Jenkins-snapshot</url>
-    		</repository>
-    			<snapshotRepository>
-        		<id>snapshots</id>
-        		<name>Anusha-snapshots</name>
-        		<url>http://localhost:8081/artifactory/Jenkins-snapshot</url>
-    			</snapshotRepository>
+    		<repository>
+       			 <id>central</id>
+       			 <name>Anusha-releases</name>
+        		  <url>http://localhost:8081/artifactory/libs-release-local</url>
+   		 </repository>
+		
+		<snapshotRepository>
+       			 <id>snapshots</id>
+        		 <name>Anusha-snapshots</name>
+        		 <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    		</snapshotRepository>
 	</distributionManagement>
 
    <build>
@@ -85,7 +78,7 @@
           <version>2.8.2</version>
         </plugin>
 
-
+	
 	<plugin>
 		<groupId>org.codehaus.cargo</groupId>
             	<artifactId>cargo-maven2-plugin</artifactId>
@@ -107,12 +100,12 @@
                 <configuration>
                     <type>existing</type> 
                     <home>${catalina.home}</home>
-                <properties>
-                        <cargo.tomcat.manager.url>https://http://localhost:8082/manager</cargo.tomcat.manager.url>
-                        <cargo.remote.username>tomcatAdmin</cargo.remote.username>
-                        <cargo.remote.password>tom30</cargo.remote.password>
-                    </properties>
-                </configuration>
+			<properties>
+                          <cargo.tomcat.manager.url>https://http://localhost:8082/manager</cargo.tomcat.manager.url>
+                          <cargo.remote.username>tomcatAdmin</cargo.remote.username>
+                          <cargo.remote.password>tom30</cargo.remote.password>
+                        </properties>
+                 </configuration>
                 <deployer>
                     <type>installed</type>
                     <deployables>
@@ -125,8 +118,8 @@
                 </deployer>
             </configuration>
 	</plugin>
-	 </plugins>
-   	 </pluginManagement>
+      </plugins>
+      </pluginManagement>
 
 	
 		
