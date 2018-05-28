@@ -84,7 +84,7 @@
            		 
 		<configuration>
                 <container>
-                    <containerId>TomcatServer</containerId>
+                    <containerId>tomcat9x</containerId>
 		    <type>installed</type>
                     <home>${CATALINA_HOME}</home>
                 </container>
