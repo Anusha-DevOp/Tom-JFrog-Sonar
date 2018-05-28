@@ -80,7 +80,7 @@
 
 	<plugin>
 		<groupId>org.codehaus.cargo</groupId>
-            	<artifactId>cargo-maven2-plugin</artifactId>
+            	<artifactId>cargo-maven3-plugin</artifactId>
            		 
 		<configuration>
                 <container>
@@ -92,16 +92,6 @@
                     <type>installed</type> 
                     <home>${CATALINA_HOME}</home>
                 </configuration>
-                <deployer>
-                    <type>installed</type>
-                    <deployables>
-                        <deployable>
-                            <groupId>mv.tom.jfrog</groupId>
-                            <artifactId>mv-tom-jfrog-demo</artifactId>
-                            <type>war</type>
-                        </deployable>
-                    </deployables>
-                </deployer>
             </configuration>
 	</plugin>
 	 </plugins>
