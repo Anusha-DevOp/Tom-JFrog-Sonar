@@ -94,10 +94,11 @@
 		<configuration>
                 <container>
                     <containerId>TomcatServer</containerId>
+		<home>${CATALINA_HOME}</home>
 		</container>
                 <configuration>
                     <type>existing</type> 
-                    <home>${catalina_home}</home>
+                    <home>${CATALINA_HOME}</home>
                  </configuration>
             </configuration>
 	</plugin>
