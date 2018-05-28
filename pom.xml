@@ -92,9 +92,9 @@
 		<version>1.6.7</version>
            		 
 		<configuration>
-                	 <wait>true</wait>
                 <container>
                     <containerId>TomcatServer</containerId>
+		</container>
                 <configuration>
                     <type>existing</type> 
                     <home>${catalina_home}</home>
